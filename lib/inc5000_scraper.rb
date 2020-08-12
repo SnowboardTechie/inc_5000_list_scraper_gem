@@ -1,4 +1,4 @@
-class Inc5000Scraper
+module Inc5000Scraper
   INC_LIST_REST_URI = 'https://www.inc.com/rest/i5list/2020'.freeze
 
   def self.scrape!
