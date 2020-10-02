@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name = %q{inc_5000_list_scraper}
-  s.version = "0.0.2"
-  s.date = %q{2020-08-12}
-  s.summary = %q{inc_5000_list_scraper scrapes the 2020 Inc 5000 list and outputs a csv of the list}
+  s.version = "0.1.0"
+  s.date = %q{2020-10-02}
+  s.summary = %q{inc_5000_list_scraper scrapes the Inc 5000 list and outputs a csv of the list}
   s.files = [
     "lib/inc_5000_list_scraper.rb"
   ]
