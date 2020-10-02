@@ -1,9 +1,13 @@
 module Inc5000List
   class Scraper
-    INC_LIST_REST_URI = 'https://www.inc.com/rest/i5list/2020'.freeze
+    INC_LIST_REST_URI = 'https://www.inc.com/rest/i5list/'.freeze
 
-    def self.create_csv!
-      new.scrape!
+    def self.create_csv!(year = nil)
+      new(year).scrape!
+    end
+
+    def initialize(year = nil)
+      @year = year.to_s
     end
 
     def scrape!
@@ -17,7 +21,7 @@ module Inc5000List
     end
 
     def list_as_text
-      OpenURI.open_uri(INC_LIST_REST_URI).read
+      OpenURI.open_uri(url).read
     end
 
     def list_as_json
@@ -36,6 +40,14 @@ module Inc5000List
         state: company.state_s,
         website: company.website
       }
+    end
+
+    def url
+      INC_LIST_REST_URI + year
+    end
+
+    def year
+      @year.present? ? @year : '2020'
     end
   end
 end
